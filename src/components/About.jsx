@@ -46,11 +46,6 @@ const About = () => {
     { area: 'Cloud Infrastructure', icon: FaCloud, level: 75 },
   ];
 
-  const techStack = [
-    'React.js', 'Node.js', 'TypeScript', 'MongoDB',
-    'PostgreSQL', 'AWS', 'Docker', 'Git'
-  ];
-
   return (
     <section id="About" className="min-h-screen py-20" ref={sectionRef}>
       <div className="container mx-auto px-4 md:px-8">
@@ -64,7 +59,7 @@ const About = () => {
           </div>
 
           {/* Main Content */}
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="grid md:grid-cols-3 gap-8">
             {/* Bio Section */}
             <div className="md:col-span-2 space-y-8">
               {/* Intro */}
@@ -126,22 +121,6 @@ const About = () => {
                   <div className="text-sm text-white/60">
                     {stat.label}
                   </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Tech Stack */}
-          <div className="card p-8">
-            <h4 className="text-xl font-semibold text-white mb-6">Tech Stack</h4>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {techStack.map((tech, index) => (
-                <div
-                  key={index}
-                  className="border border-white/10 rounded-lg p-4 text-center hover:border-accent hover:bg-accent/5 transition-all duration-300"
-                >
-                  <span className="text-white/80">{tech}</span>
                 </div>
               ))}
             </div>
