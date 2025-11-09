@@ -131,7 +131,7 @@ const Portfolio = () => {
 
   const tabs = [
     { id: 'certificates', label: 'Certificates', icon: FaCertificate },
-    { id: 'projects', label: 'Projects', icon: FaTasks },
+    { id: 'projects', label: 'Projects', icon: FaRocket },
     { id: 'tech-stack', label: 'Tech Stack', icon: SiReact },
   ];
 
