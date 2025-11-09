@@ -40,10 +40,10 @@ const About = () => {
   ];
 
   const expertise = [
-    { area: 'Frontend Development', icon: FaCode, level: 90 },
-    { area: 'Backend Development', icon: FaServer, level: 85 },
-    { area: 'Database Design', icon: FaDatabase, level: 80 },
-    { area: 'Cloud Infrastructure', icon: FaCloud, level: 75 },
+    { area: 'Frontend Development', icon: FaCode, level: 95 },
+    { area: 'Backend Development', icon: FaServer, level: 90 },
+    { area: 'Database Design', icon: FaDatabase, level: 90 },
+    { area: 'Cloud Infrastructure', icon: FaCloud, level: 85 },
   ];
 
   return (
