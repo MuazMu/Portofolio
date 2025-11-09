@@ -4,6 +4,7 @@ import About from './components/About';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import TapGame from './components/TapGame';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Portfolio />
       <Contact />
       <Footer />
+      <TapGame />
     </div>
   );
 }
