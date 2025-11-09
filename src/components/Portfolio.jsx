@@ -1,10 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
-import { FaShoppingCart, FaTasks, FaUser, FaCloudSunRain, FaExternalLinkAlt, FaStar } from 'react-icons/fa';
-import { FaGithub } from 'react-icons/fa';
+import { FaShoppingCart, FaTasks, FaUser, FaCloudSunRain, FaExternalLinkAlt, FaGithub, FaCertificate, FaAward } from 'react-icons/fa';
+import {
+  SiReact, SiJavascript, SiTailwindcss, SiNodedotjs, SiHtml5, SiCss3,
+  SiGit, SiVite, SiMongodb, SiFirebase, SiPython, SiTypescript,
+  SiExpress, SiPostgresql, SiDocker, SiRedis
+} from 'react-icons/si';
 
 const Portfolio = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [activeFilter, setActiveFilter] = useState('all');
+  const [activeTab, setActiveTab] = useState('projects'); // certificates, projects, tech-stack
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -33,57 +37,103 @@ const Portfolio = () => {
       id: 1,
       title: 'E-Commerce Platform',
       description: 'Full-featured e-commerce platform built with React and Node.js, complete with payment gateway integration and comprehensive admin dashboard.',
-      category: 'Web App',
       icon: FaShoppingCart,
       color: 'from-green-400 to-emerald-600',
       technologies: ['React', 'Node.js', 'MongoDB', 'Tailwind CSS'],
       github: 'https://github.com/EkiZR',
       demo: '#',
-      featured: true
     },
     {
       id: 2,
       title: 'Task Management App',
       description: 'Modern task management application with real-time collaboration features, notifications, and intuitive user interface.',
-      category: 'Web App',
       icon: FaTasks,
       color: 'from-blue-400 to-cyan-600',
       technologies: ['React', 'Firebase', 'Tailwind CSS'],
       github: 'https://github.com/EkiZR',
       demo: '#',
-      featured: false
     },
     {
       id: 3,
       title: 'Portfolio Website',
       description: 'Interactive portfolio website with smooth animations and modern design to showcase projects and professional experience.',
-      category: 'Website',
       icon: FaUser,
       color: 'from-purple-400 to-pink-600',
       technologies: ['React', 'Vite', 'Tailwind CSS', 'Framer Motion'],
       github: 'https://github.com/EkiZR',
       demo: '#',
-      featured: true
     },
     {
       id: 4,
       title: 'Weather Dashboard',
       description: 'Real-time weather dashboard with beautiful data visualizations and accurate weather predictions using API integration.',
-      category: 'Web App',
       icon: FaCloudSunRain,
       color: 'from-orange-400 to-red-600',
       technologies: ['React', 'API Integration', 'Chart.js', 'Tailwind CSS'],
       github: 'https://github.com/EkiZR',
       demo: '#',
-      featured: false
     },
   ];
 
-  const filters = ['all', 'Web App', 'Website'];
+  const certificates = [
+    {
+      id: 1,
+      title: 'React Professional Certification',
+      issuer: 'Meta',
+      date: '2024',
+      icon: FaCertificate,
+      color: 'from-blue-500 to-cyan-600',
+    },
+    {
+      id: 2,
+      title: 'JavaScript Advanced',
+      issuer: 'FreeCodeCamp',
+      date: '2023',
+      icon: FaAward,
+      color: 'from-yellow-500 to-orange-600',
+    },
+    {
+      id: 3,
+      title: 'Full Stack Web Development',
+      issuer: 'Udemy',
+      date: '2023',
+      icon: FaCertificate,
+      color: 'from-purple-500 to-pink-600',
+    },
+    {
+      id: 4,
+      title: 'Node.js Backend Development',
+      issuer: 'Coursera',
+      date: '2024',
+      icon: FaAward,
+      color: 'from-green-500 to-emerald-600',
+    },
+  ];
 
-  const filteredProjects = activeFilter === 'all'
-    ? projects
-    : projects.filter(project => project.category === activeFilter);
+  const techStack = [
+    { name: 'React', icon: SiReact, color: '#61DAFB', category: 'Frontend' },
+    { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E', category: 'Frontend' },
+    { name: 'TypeScript', icon: SiTypescript, color: '#3178C6', category: 'Frontend' },
+    { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#06B6D4', category: 'Frontend' },
+    { name: 'HTML5', icon: SiHtml5, color: '#E34F26', category: 'Frontend' },
+    { name: 'CSS3', icon: SiCss3, color: '#1572B6', category: 'Frontend' },
+    { name: 'Node.js', icon: SiNodedotjs, color: '#339933', category: 'Backend' },
+    { name: 'Express', icon: SiExpress, color: '#000000', category: 'Backend' },
+    { name: 'MongoDB', icon: SiMongodb, color: '#47A248', category: 'Database' },
+    { name: 'PostgreSQL', icon: SiPostgresql, color: '#4169E1', category: 'Database' },
+    { name: 'Firebase', icon: SiFirebase, color: '#FFCA28', category: 'Backend' },
+    { name: 'Git', icon: SiGit, color: '#F05032', category: 'Tools' },
+    { name: 'Vite', icon: SiVite, color: '#646CFF', category: 'Tools' },
+    { name: 'Docker', icon: SiDocker, color: '#2496ED', category: 'Tools' },
+    { name: 'Python', icon: SiPython, color: '#3776AB', category: 'Backend' },
+    { name: 'Redis', icon: SiRedis, color: '#DC382D', category: 'Database' },
+  ];
+
+  const tabs = [
+    { id: 'certificates', label: 'Certificates', icon: FaCertificate },
+    { id: 'projects', label: 'Projects', icon: FaTasks },
+    { id: 'tech-stack', label: 'Tech Stack', icon: SiReact },
+  ];
 
   return (
     <section id="Portofolio" className="min-h-screen py-20 relative" ref={sectionRef}>
@@ -91,115 +141,180 @@ const Portfolio = () => {
         {/* Animated Section Title */}
         <h2 className={`text-4xl md:text-5xl font-bold mb-6 text-center ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
           <span className="bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
-            My Portfolio
+            Portfolio Showcase
           </span>
         </h2>
         <p className={`text-center text-white/60 mb-12 text-lg ${isVisible ? 'animate-fade-in-up delay-200' : 'opacity-0'}`}>
-          Explore my latest work and creative projects
+          Explore my work, certifications, and technical expertise
         </p>
 
-        {/* Filter Buttons */}
+        {/* Tab Navigation */}
         <div className={`flex justify-center gap-4 mb-12 flex-wrap ${isVisible ? 'animate-scale-in delay-300' : 'opacity-0'}`}>
-          {filters.map((filter) => (
+          {tabs.map((tab) => (
             <button
-              key={filter}
-              onClick={() => setActiveFilter(filter)}
-              className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
-                activeFilter === filter
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 flex items-center gap-2 ${
+                activeTab === tab.id
                   ? 'bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-white shadow-lg scale-110'
                   : 'glass text-white/70 hover:text-white hover:scale-105'
               }`}
             >
-              {filter}
+              <tab.icon className="text-lg" />
+              {tab.label}
             </button>
           ))}
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {filteredProjects.map((project, index) => (
-            <div
-              key={project.id}
-              className={`glass rounded-2xl overflow-hidden group hover:scale-105 hover:shadow-2xl hover:shadow-[#6366f1]/20 transition-all duration-500 relative ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
-              style={{ animationDelay: `${0.4 + index * 0.1}s` }}
-            >
-              {/* Featured Badge */}
-              {project.featured && (
-                <div className="absolute top-4 right-4 z-10">
-                  <div className="glass px-3 py-1 rounded-full flex items-center gap-2 backdrop-blur-md">
-                    <FaStar className="text-yellow-400 text-sm" />
-                    <span className="text-xs font-medium">Featured</span>
+        {/* Tab Content */}
+        <div className="max-w-6xl mx-auto">
+          {/* Certificates Tab */}
+          {activeTab === 'certificates' && (
+            <div className="grid md:grid-cols-2 gap-8">
+              {certificates.map((cert, index) => (
+                <div
+                  key={cert.id}
+                  className={`glass rounded-2xl p-8 hover:scale-105 hover:shadow-2xl hover:shadow-[#6366f1]/20 transition-all duration-500 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
+                  style={{ animationDelay: `${0.4 + index * 0.1}s` }}
+                >
+                  <div className="flex items-start gap-6">
+                    <div className={`w-16 h-16 rounded-lg bg-gradient-to-br ${cert.color} flex items-center justify-center flex-shrink-0`}>
+                      <cert.icon className="text-3xl text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold mb-2 text-white">
+                        {cert.title}
+                      </h3>
+                      <p className="text-white/70 mb-2">
+                        <span className="font-medium text-white/90">{cert.issuer}</span>
+                      </p>
+                      <p className="text-sm text-white/60">{cert.date}</p>
+                    </div>
                   </div>
                 </div>
-              )}
-
-              {/* Project Icon Header */}
-              <div className={`h-52 bg-gradient-to-br ${project.color} overflow-hidden relative group`}>
-                <div className="absolute inset-0 bg-black/20"></div>
-                <div className="absolute inset-0 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
-                  <div className="w-24 h-24 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center animate-float-slow">
-                    <project.icon className="text-5xl text-white" />
-                  </div>
-                </div>
-                {/* Category Badge */}
-                <div className="absolute bottom-4 left-4">
-                  <span className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-sm font-medium">
-                    {project.category}
-                  </span>
-                </div>
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-3 group-hover:bg-gradient-to-r group-hover:from-[#6366f1] group-hover:to-[#a855f7] group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                  {project.title}
-                </h3>
-                <p className="text-white/70 mb-4 line-clamp-3 leading-relaxed text-sm">
-                  {project.description}
-                </p>
-
-                {/* Technologies */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 text-xs rounded-full border border-white/20 bg-white/5 hover:border-[#6366f1]/50 hover:bg-[#6366f1]/10 hover:scale-105 transition-all duration-300"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Action Buttons */}
-                <div className="flex gap-3">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg glass hover:bg-white/10 text-white/80 hover:text-white transition-all duration-300 hover:scale-105"
-                  >
-                    <FaGithub className="text-lg" />
-                    <span className="text-sm font-medium">Code</span>
-                  </a>
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-gradient-to-r from-[#6366f1] to-[#a855f7] hover:shadow-lg hover:shadow-[#6366f1]/50 transition-all duration-300 hover:scale-105"
-                  >
-                    <FaExternalLinkAlt className="text-sm" />
-                    <span className="text-sm font-medium">Demo</span>
-                  </a>
-                </div>
-              </div>
+              ))}
             </div>
-          ))}
+          )}
+
+          {/* Projects Tab */}
+          {activeTab === 'projects' && (
+            <div className="grid md:grid-cols-2 gap-8">
+              {projects.map((project, index) => (
+                <div
+                  key={project.id}
+                  className={`glass rounded-2xl overflow-hidden group hover:scale-105 hover:shadow-2xl hover:shadow-[#6366f1]/20 transition-all duration-500 relative ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
+                  style={{ animationDelay: `${0.4 + index * 0.1}s` }}
+                >
+                  {/* Project Icon Header */}
+                  <div className={`h-52 bg-gradient-to-br ${project.color} overflow-hidden relative group`}>
+                    <div className="absolute inset-0 bg-black/20"></div>
+                    <div className="absolute inset-0 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
+                      <div className="w-24 h-24 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center animate-float-slow">
+                        <project.icon className="text-5xl text-white" />
+                      </div>
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold mb-3 group-hover:bg-gradient-to-r group-hover:from-[#6366f1] group-hover:to-[#a855f7] group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                      {project.title}
+                    </h3>
+                    <p className="text-white/70 mb-4 line-clamp-3 leading-relaxed text-sm">
+                      {project.description}
+                    </p>
+
+                    {/* Technologies */}
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1 text-xs rounded-full border border-white/20 bg-white/5 hover:border-[#6366f1]/50 hover:bg-[#6366f1]/10 hover:scale-105 transition-all duration-300"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Action Buttons */}
+                    <div className="flex gap-3">
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg glass hover:bg-white/10 text-white/80 hover:text-white transition-all duration-300 hover:scale-105"
+                      >
+                        <FaGithub className="text-lg" />
+                        <span className="text-sm font-medium">Code</span>
+                      </a>
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-gradient-to-r from-[#6366f1] to-[#a855f7] hover:shadow-lg hover:shadow-[#6366f1]/50 transition-all duration-300 hover:scale-105"
+                      >
+                        <FaExternalLinkAlt className="text-sm" />
+                        <span className="text-sm font-medium">Demo</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Tech Stack Tab */}
+          {activeTab === 'tech-stack' && (
+            <div>
+              {['Frontend', 'Backend', 'Database', 'Tools'].map((category, catIndex) => {
+                const techs = techStack.filter(t => t.category === category);
+                if (techs.length === 0) return null;
+
+                return (
+                  <div key={category} className="mb-12">
+                    <h3 className={`text-2xl font-bold mb-6 text-center bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
+                        style={{ animationDelay: `${0.4 + catIndex * 0.1}s` }}>
+                      {category}
+                    </h3>
+                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6">
+                      {techs.map((tech, index) => (
+                        <div
+                          key={tech.name}
+                          className={`glass rounded-2xl p-6 hover:scale-110 hover:shadow-2xl transition-all duration-500 flex flex-col items-center justify-center gap-4 group ${isVisible ? 'animate-scale-in' : 'opacity-0'}`}
+                          style={{
+                            animationDelay: `${0.5 + catIndex * 0.1 + index * 0.05}s`,
+                          }}
+                        >
+                          <div
+                            className="w-16 h-16 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-125"
+                            style={{
+                              backgroundColor: `${tech.color}20`,
+                            }}
+                          >
+                            <tech.icon
+                              className="text-4xl transition-all duration-300"
+                              style={{ color: tech.color }}
+                            />
+                          </div>
+                          <span className="text-sm font-medium text-white/80 group-hover:text-white transition-colors duration-300 text-center">
+                            {tech.name}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
         </div>
 
-        {/* No Results Message */}
-        {filteredProjects.length === 0 && (
+        {/* No Results Message (if needed) */}
+        {((activeTab === 'certificates' && certificates.length === 0) ||
+          (activeTab === 'projects' && projects.length === 0) ||
+          (activeTab === 'tech-stack' && techStack.length === 0)) && (
           <div className="text-center py-12">
-            <p className="text-white/60 text-lg">No projects found in this category.</p>
+            <p className="text-white/60 text-lg">No content available in this section.</p>
           </div>
         )}
       </div>
