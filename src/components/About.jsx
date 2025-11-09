@@ -1,18 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import {
-  FaReact,
-  FaJs,
-  FaCss3Alt,
-  FaMobile,
-  FaNodeJs,
-  FaHtml5,
-  FaGitAlt,
   FaCode,
   FaUser,
   FaBriefcase,
   FaGraduationCap
 } from 'react-icons/fa';
-import { SiTailwindcss, SiVite } from 'react-icons/si';
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -38,17 +30,6 @@ const About = () => {
       }
     };
   }, []);
-
-  const skills = [
-    { name: 'React', level: 'Advanced', percentage: 90, icon: FaReact, color: '#61DAFB' },
-    { name: 'JavaScript', level: 'Advanced', percentage: 95, icon: FaJs, color: '#F7DF1E' },
-    { name: 'Tailwind CSS', level: 'Advanced', percentage: 90, icon: SiTailwindcss, color: '#06B6D4' },
-    { name: 'React Native', level: 'Intermediate', percentage: 75, icon: FaMobile, color: '#61DAFB' },
-    { name: 'Node.js', level: 'Intermediate', percentage: 70, icon: FaNodeJs, color: '#339933' },
-    { name: 'HTML/CSS', level: 'Advanced', percentage: 95, icon: FaHtml5, color: '#E34F26' },
-    { name: 'Git/GitHub', level: 'Advanced', percentage: 85, icon: FaGitAlt, color: '#F05032' },
-    { name: 'Vite', level: 'Advanced', percentage: 85, icon: SiVite, color: '#646CFF' },
-  ];
 
   const stats = [
     { label: 'Total Projects', value: '10+', icon: FaBriefcase },
@@ -98,42 +79,6 @@ const About = () => {
                   </p>
                 </div>
               </div>
-            </div>
-          </div>
-
-          {/* Skills Section */}
-          <div className={`mb-16 ${isVisible ? 'animate-fade-in-up delay-300' : 'opacity-0'}`}>
-            <h3 className="text-2xl md:text-3xl font-bold mb-8 text-center bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
-              Technical Skills
-            </h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              {skills.map((skill, index) => (
-                <div
-                  key={skill.name}
-                  className="glass rounded-xl p-6 hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-[#6366f1]/20"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#6366f1]/20 to-[#a855f7]/20 flex items-center justify-center">
-                        <skill.icon className="text-xl" style={{ color: skill.color }} />
-                      </div>
-                      <div>
-                        <div className="font-medium text-white">{skill.name}</div>
-                        <div className="text-xs text-white/60">{skill.level}</div>
-                      </div>
-                    </div>
-                    <span className="text-sm font-bold text-[#6366f1]">{skill.percentage}%</span>
-                  </div>
-                  {/* Progress Bar */}
-                  <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
-                    <div
-                      className="h-full bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-full transition-all duration-1000 ease-out"
-                      style={{ width: isVisible ? `${skill.percentage}%` : '0%' }}
-                    ></div>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
 
