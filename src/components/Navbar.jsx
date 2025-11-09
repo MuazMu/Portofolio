@@ -25,7 +25,7 @@ const Navbar = () => {
     }`}>
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
         <div className="text-xl md:text-2xl font-bold bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
-          EZR
+          Muaz
         </div>
 
         {/* Desktop Menu */}
