@@ -30,14 +30,14 @@ const Contact = () => {
   const socials = [
     {
       name: 'GitHub',
-      url: 'https://github.com/EkiZR',
+      url: 'https://github.com/MuazMu',
       icon: FaGithub,
       gradient: 'from-[#333] to-gray-700',
       description: 'Check out my code'
     },
     {
       name: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/ekizr/',
+      url: 'https://www.linkedin.com/in/muaz-abdulkhafur/',
       icon: FaLinkedin,
       gradient: 'from-[#0A66C2] to-blue-700',
       description: 'Professional network'
@@ -72,7 +72,7 @@ const Contact = () => {
     },
     {
       name: 'Email',
-      url: 'mailto:ekizr@example.com',
+      url: 'mailto:muazabdulkhafur@gmail.com',
       icon: FaEnvelope,
       gradient: 'from-[#EA4335] to-red-600',
       description: 'Send me an email'

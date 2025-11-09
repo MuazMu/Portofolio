@@ -65,17 +65,18 @@ const About = () => {
                 {/* Bio Content */}
                 <div className="flex-1 text-center md:text-left">
                   <h3 className="text-3xl md:text-4xl font-bold mb-3 bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
-                    Eki Zulfar Rachman
+                    Muaz Abdulkhafur
                   </h3>
-                  <p className="text-xl text-[#6366f1] font-medium mb-4">Front-End Web Developer</p>
+                  <p className="text-xl text-[#6366f1] font-medium mb-4">Full Stack Engineer</p>
                   <p className="text-white/70 mb-4 leading-relaxed">
-                    Hello! I'm a passionate Front-End Web Developer dedicated to creating
-                    engaging and responsive web experiences. I focus on modern interface design with
-                    high performance and user-centric approaches.
+                    Hello! I'm a passionate Full Stack Engineer with expertise in building end-to-end web applications.
+                    I specialize in creating scalable, performant solutions using modern technologies across the entire stack,
+                    from responsive frontend interfaces to robust backend systems.
                   </p>
                   <p className="text-white/70 leading-relaxed">
-                    With experience in various modern technologies like React, Tailwind CSS, and Node.js,
-                    I'm committed to delivering high-quality web solutions that meet user needs and exceed expectations.
+                    With experience in React, Node.js, cloud platforms, and database systems,
+                    I deliver comprehensive solutions that drive business value. I'm committed to writing clean, maintainable code
+                    and staying current with emerging technologies to build innovative digital products.
                   </p>
                 </div>
               </div>

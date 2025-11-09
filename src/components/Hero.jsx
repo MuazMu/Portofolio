@@ -13,19 +13,19 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center">
           {/* Name */}
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            <span className="text-white">Eki Zulfar Rachman</span>
+            <span className="text-white">Muaz Abdulkhafur</span>
           </h1>
 
           {/* Title/Role with Gradient */}
           <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">
             <span className="bg-gradient-to-r from-[#6366f1] via-[#a855f7] to-[#3b82f6] bg-clip-text text-transparent">
-              Front-End Web Developer
+              Full Stack Engineer
             </span>
           </h2>
 
           {/* Description */}
           <p className="text-lg md:text-xl text-white/70 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Crafting modern, responsive, and high-performance web interfaces with a focus on exceptional user experiences.
+            Building scalable web applications from frontend to backend with modern technologies. Specializing in full-stack development, cloud solutions, and innovative digital experiences.
           </p>
 
           {/* Call to Action Buttons */}
