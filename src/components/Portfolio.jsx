@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { FaCalendarAlt, FaCoffee, FaRocket, FaCode, FaExternalLinkAlt, FaCertificate, FaAward } from 'react-icons/fa';
+import { FaCalendarAlt, FaCoffee, FaRocket, FaCode, FaExternalLinkAlt, FaCertificate, FaAward, FaShoppingCart, FaGlobe } from 'react-icons/fa';
 import {
   SiReact, SiJavascript, SiTailwindcss, SiNodedotjs, SiHtml5, SiCss3,
   SiGit, SiVite, SiMongodb, SiFirebase, SiPython, SiTypescript,
@@ -44,6 +44,14 @@ const Portfolio = () => {
     },
     {
       id: 2,
+      title: 'TK Coffee',
+      description: 'Full-featured e-commerce platform for specialty coffee with shopping cart, product catalog, and admin dashboard.',
+      icon: FaShoppingCart,
+      technologies: ['Next.js', 'Tailwind CSS', 'shadcn/ui'],
+      demo: 'https://v0-asalacoffee-clone-project.vercel.app/',
+    },
+    {
+      id: 3,
       title: 'Chaffee Coffee Co.',
       description: 'Modern, responsive website showcasing premium coffee products with elegant design.',
       icon: FaCoffee,
@@ -51,15 +59,15 @@ const Portfolio = () => {
       demo: 'https://chaffeecofee.netlify.app/',
     },
     {
-      id: 3,
-      title: 'Dablie Tech',
-      description: 'Startup Innovation Platform designed to support entrepreneurs and innovators.',
+      id: 4,
+      title: 'Dablie',
+      description: 'Innovation platform connecting entrepreneurs, investors, and innovators to build and scale tech startups.',
       icon: FaRocket,
-      technologies: ['React', 'Next.js', 'Vercel'],
-      demo: 'https://dablietechstartup.vercel.app/',
+      technologies: ['React', 'Next.js', 'Node.js'],
+      demo: 'https://dablie.org/',
     },
     {
-      id: 4,
+      id: 5,
       title: 'Portfolio V2',
       description: 'Personal portfolio website with modern design and smooth animations.',
       icon: FaCode,
