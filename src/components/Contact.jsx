@@ -44,7 +44,7 @@ const Contact = () => {
     },
     {
       name: 'Upwork',
-      url: 'https://www.upwork.com/',
+      url: 'https://www.upwork.com/freelancers/~0184077dc6e6acc93a?viewMode=1',
       icon: SiUpwork,
       gradient: 'from-[#6FDA44] to-green-600',
       description: 'Hire me on Upwork'
