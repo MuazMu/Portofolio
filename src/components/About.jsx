@@ -1,4 +1,18 @@
 import { useEffect, useRef, useState } from 'react';
+import {
+  FaReact,
+  FaJs,
+  FaCss3Alt,
+  FaMobile,
+  FaNodeJs,
+  FaHtml5,
+  FaGitAlt,
+  FaCode,
+  FaUser,
+  FaBriefcase,
+  FaGraduationCap
+} from 'react-icons/fa';
+import { SiTailwindcss, SiVite } from 'react-icons/si';
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -26,26 +40,26 @@ const About = () => {
   }, []);
 
   const skills = [
-    { name: 'React', level: 'Advanced' },
-    { name: 'JavaScript', level: 'Advanced' },
-    { name: 'Tailwind CSS', level: 'Advanced' },
-    { name: 'React Native', level: 'Intermediate' },
-    { name: 'Node.js', level: 'Intermediate' },
-    { name: 'HTML/CSS', level: 'Advanced' },
-    { name: 'Git/GitHub', level: 'Advanced' },
-    { name: 'Vite', level: 'Advanced' },
+    { name: 'React', level: 'Advanced', percentage: 90, icon: FaReact, color: '#61DAFB' },
+    { name: 'JavaScript', level: 'Advanced', percentage: 95, icon: FaJs, color: '#F7DF1E' },
+    { name: 'Tailwind CSS', level: 'Advanced', percentage: 90, icon: SiTailwindcss, color: '#06B6D4' },
+    { name: 'React Native', level: 'Intermediate', percentage: 75, icon: FaMobile, color: '#61DAFB' },
+    { name: 'Node.js', level: 'Intermediate', percentage: 70, icon: FaNodeJs, color: '#339933' },
+    { name: 'HTML/CSS', level: 'Advanced', percentage: 95, icon: FaHtml5, color: '#E34F26' },
+    { name: 'Git/GitHub', level: 'Advanced', percentage: 85, icon: FaGitAlt, color: '#F05032' },
+    { name: 'Vite', level: 'Advanced', percentage: 85, icon: SiVite, color: '#646CFF' },
   ];
 
   const stats = [
-    { label: 'Total Projects', value: '10+', icon: '📦' },
-    { label: 'Technologies', value: '15+', icon: '⚡' },
-    { label: 'Years Experience', value: '3+', icon: '🚀' },
+    { label: 'Total Projects', value: '10+', icon: FaBriefcase },
+    { label: 'Technologies', value: '15+', icon: FaCode },
+    { label: 'Years Experience', value: '3+', icon: FaGraduationCap },
   ];
 
   return (
     <section id="About" className="min-h-screen py-20 relative" ref={sectionRef}>
       <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           {/* Animated Section Title */}
           <h2 className={`text-4xl md:text-5xl font-bold mb-12 text-center ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
             <span className="bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
@@ -53,56 +67,91 @@ const About = () => {
             </span>
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            {/* Bio Card - Slide from Left */}
-            <div className={`glass rounded-2xl p-8 hover:scale-105 transition-transform duration-300 ${isVisible ? 'animate-slide-left delay-200' : 'opacity-0'}`}>
-              <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
-                Who I Am
-              </h3>
-              <p className="text-white/70 mb-4 leading-relaxed">
-                Hello! I'm Eki Zulfar Rachman, a passionate Front-End Web Developer dedicated to creating
-                engaging and responsive web experiences. I focus on modern interface design with
-                high performance and user-centric approaches.
-              </p>
-              <p className="text-white/70 leading-relaxed">
-                With experience in various modern technologies like React, Tailwind CSS, and Node.js,
-                I'm committed to delivering high-quality web solutions that meet user needs and exceed expectations.
-              </p>
-            </div>
-
-            {/* Skills Card - Slide from Right */}
-            <div className={`glass rounded-2xl p-8 hover:scale-105 transition-transform duration-300 ${isVisible ? 'animate-slide-right delay-300' : 'opacity-0'}`}>
-              <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
-                Technical Skills
-              </h3>
-              <div className="grid grid-cols-2 gap-3">
-                {skills.map((skill, index) => (
-                  <div
-                    key={skill.name}
-                    className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 hover:border-[#6366f1]/50 hover:bg-white/10 transition-all duration-300 hover:scale-105"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    <div className="font-medium text-white">{skill.name}</div>
-                    <div className="text-xs text-white/60">{skill.level}</div>
+          {/* Profile Section */}
+          <div className={`mb-16 ${isVisible ? 'animate-scale-in delay-200' : 'opacity-0'}`}>
+            <div className="glass rounded-3xl p-8 md:p-12">
+              <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
+                {/* Profile Image */}
+                <div className="relative group">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-[#6366f1] via-[#a855f7] to-[#3b82f6] rounded-full blur-lg opacity-75 group-hover:opacity-100 transition duration-300 animate-pulse"></div>
+                  <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-white/20">
+                    <div className="w-full h-full bg-gradient-to-br from-[#6366f1]/20 to-[#a855f7]/20 flex items-center justify-center">
+                      <FaUser className="text-8xl text-white/30" />
+                    </div>
                   </div>
-                ))}
+                </div>
+
+                {/* Bio Content */}
+                <div className="flex-1 text-center md:text-left">
+                  <h3 className="text-3xl md:text-4xl font-bold mb-3 bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
+                    Eki Zulfar Rachman
+                  </h3>
+                  <p className="text-xl text-[#6366f1] font-medium mb-4">Front-End Web Developer</p>
+                  <p className="text-white/70 mb-4 leading-relaxed">
+                    Hello! I'm a passionate Front-End Web Developer dedicated to creating
+                    engaging and responsive web experiences. I focus on modern interface design with
+                    high performance and user-centric approaches.
+                  </p>
+                  <p className="text-white/70 leading-relaxed">
+                    With experience in various modern technologies like React, Tailwind CSS, and Node.js,
+                    I'm committed to delivering high-quality web solutions that meet user needs and exceed expectations.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Stats Section - Fade in with stagger */}
+          {/* Skills Section */}
+          <div className={`mb-16 ${isVisible ? 'animate-fade-in-up delay-300' : 'opacity-0'}`}>
+            <h3 className="text-2xl md:text-3xl font-bold mb-8 text-center bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
+              Technical Skills
+            </h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              {skills.map((skill, index) => (
+                <div
+                  key={skill.name}
+                  className="glass rounded-xl p-6 hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-[#6366f1]/20"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#6366f1]/20 to-[#a855f7]/20 flex items-center justify-center">
+                        <skill.icon className="text-xl" style={{ color: skill.color }} />
+                      </div>
+                      <div>
+                        <div className="font-medium text-white">{skill.name}</div>
+                        <div className="text-xs text-white/60">{skill.level}</div>
+                      </div>
+                    </div>
+                    <span className="text-sm font-bold text-[#6366f1]">{skill.percentage}%</span>
+                  </div>
+                  {/* Progress Bar */}
+                  <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+                    <div
+                      className="h-full bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-full transition-all duration-1000 ease-out"
+                      style={{ width: isVisible ? `${skill.percentage}%` : '0%' }}
+                    ></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Stats Section */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className={`glass rounded-xl p-6 text-center hover:scale-105 transition-transform duration-300 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
+                className={`glass rounded-xl p-8 text-center hover:scale-105 transition-transform duration-300 group ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
                 style={{ animationDelay: `${0.5 + index * 0.1}s` }}
               >
-                <div className="text-4xl mb-2 animate-bounce-slow">{stat.icon}</div>
-                <div className="text-3xl font-bold bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent mb-2">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-[#6366f1]/20 to-[#a855f7]/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <stat.icon className="text-3xl text-[#6366f1] group-hover:text-[#a855f7] transition-colors duration-300" />
+                </div>
+                <div className="text-4xl font-bold bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent mb-2">
                   {stat.value}
                 </div>
-                <div className="text-white/60">{stat.label}</div>
+                <div className="text-white/60 font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
