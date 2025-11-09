@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { FaCalendarAlt, FaCoffee, FaRocket, FaCode, FaExternalLinkAlt, FaGithub, FaCertificate, FaAward } from 'react-icons/fa';
+import { FaCalendarAlt, FaCoffee, FaRocket, FaCode, FaExternalLinkAlt, FaCertificate, FaAward } from 'react-icons/fa';
 import {
   SiReact, SiJavascript, SiTailwindcss, SiNodedotjs, SiHtml5, SiCss3,
   SiGit, SiVite, SiMongodb, SiFirebase, SiPython, SiTypescript,
@@ -40,7 +40,6 @@ const Portfolio = () => {
       icon: FaCalendarAlt,
       color: 'from-purple-400 to-pink-600',
       technologies: ['PWA', 'Service Workers', 'React', 'Node.js'],
-      github: 'https://github.com/MuazMu',
       demo: 'https://afri.events/',
     },
     {
@@ -50,7 +49,6 @@ const Portfolio = () => {
       icon: FaCoffee,
       color: 'from-amber-400 to-orange-600',
       technologies: ['React', 'Tailwind CSS', 'Netlify'],
-      github: 'https://github.com/MuazMu',
       demo: 'https://chaffeecofee.netlify.app/',
     },
     {
@@ -60,7 +58,6 @@ const Portfolio = () => {
       icon: FaRocket,
       color: 'from-blue-400 to-cyan-600',
       technologies: ['React', 'Next.js', 'Vercel', 'Tailwind CSS'],
-      github: 'https://github.com/MuazMu',
       demo: 'https://dablietechstartup.vercel.app/',
     },
     {
@@ -70,7 +67,6 @@ const Portfolio = () => {
       icon: FaCode,
       color: 'from-indigo-400 to-purple-600',
       technologies: ['React', 'Vite', 'Tailwind CSS'],
-      github: 'https://github.com/MuazMu',
       demo: '#',
     },
   ];
@@ -252,27 +248,16 @@ const Portfolio = () => {
                       ))}
                     </div>
 
-                    {/* Action Buttons */}
-                    <div className="flex gap-3">
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg glass hover:bg-white/10 text-white/80 hover:text-white transition-all duration-300 hover:scale-105"
-                      >
-                        <FaGithub className="text-lg" />
-                        <span className="text-sm font-medium">Code</span>
-                      </a>
-                      <a
-                        href={project.demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-gradient-to-r from-[#6366f1] to-[#a855f7] hover:shadow-lg hover:shadow-[#6366f1]/50 transition-all duration-300 hover:scale-105"
-                      >
-                        <FaExternalLinkAlt className="text-sm" />
-                        <span className="text-sm font-medium">Demo</span>
-                      </a>
-                    </div>
+                    {/* Action Button */}
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-gradient-to-r from-[#6366f1] to-[#a855f7] hover:shadow-lg hover:shadow-[#6366f1]/50 transition-all duration-300 hover:scale-105"
+                    >
+                      <FaExternalLinkAlt className="text-sm" />
+                      <span className="text-sm font-medium">Visit Site</span>
+                    </a>
                   </div>
                 </div>
               ))}
