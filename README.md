@@ -1,4 +1,4 @@
-# Portfolio Website - Eki Zulfar Rachman
+# Portfolio Website
 
 A modern, responsive portfolio website duplicated from https://eki.my.id/ using React, Vite, and Tailwind CSS.
 
