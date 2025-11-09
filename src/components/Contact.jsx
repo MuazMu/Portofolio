@@ -130,7 +130,7 @@ const Contact = () => {
             </p>
             <div className="flex items-center justify-center space-x-2">
               <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
-              <span className="text-sm text-white/60">Response time: &lt;24 hours</span>
+              <span className="text-sm text-white/60">Response time: &lt;4 hours</span>
             </div>
           </div>
         </div>
