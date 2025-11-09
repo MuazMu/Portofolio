@@ -1,6 +1,6 @@
 # Portfolio Website
 
-A modern, responsive portfolio website duplicated from https://eki.my.id/ using React, Vite, and Tailwind CSS.
+A modern, responsive portfolio website using React, Vite, and Tailwind CSS.
 
 ## ✨ Project Status: COMPLETE ✅
 
