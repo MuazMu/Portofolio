@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import {
   FaCode,
-  FaUser,
   FaBriefcase,
-  FaGraduationCap
+  FaGraduationCap,
+  FaServer,
+  FaDatabase,
+  FaCloud
 } from 'react-icons/fa';
 
 const About = () => {
@@ -32,74 +34,130 @@ const About = () => {
   }, []);
 
   const stats = [
-    { label: 'Total Projects', value: '10+', icon: FaBriefcase },
-    { label: 'Technologies', value: '15+', icon: FaCode },
-    { label: 'Years Experience', value: '3+', icon: FaGraduationCap },
+    { label: 'PROJECTS DEPLOYED', value: '10+', icon: FaBriefcase, code: 'STAT_01' },
+    { label: 'TECH STACK', value: '15+', icon: FaCode, code: 'STAT_02' },
+    { label: 'YRS EXPERIENCE', value: '3+', icon: FaGraduationCap, code: 'STAT_03' },
+  ];
+
+  const expertise = [
+    { area: 'Frontend Architecture', icon: FaCode, level: 90 },
+    { area: 'Backend Systems', icon: FaServer, level: 85 },
+    { area: 'Database Design', icon: FaDatabase, level: 80 },
+    { area: 'Cloud Infrastructure', icon: FaCloud, level: 75 },
   ];
 
   return (
-    <section id="About" className="min-h-screen py-20 relative" ref={sectionRef}>
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-6xl mx-auto">
-          {/* Animated Section Title */}
-          <h2 className={`text-4xl md:text-5xl font-bold mb-12 text-center ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-            <span className="bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
-              About Me
-            </span>
-          </h2>
+    <section id="About" className="min-h-screen py-20 relative bg-cyber-black" ref={sectionRef}>
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="max-w-7xl mx-auto">
+          {/* Section Header */}
+          <div className="mb-16">
+            <div className="flex items-center space-x-3 mb-4">
+              <div className="data-bar w-24"></div>
+              <span className="micro-detail">SECTION.02</span>
+            </div>
+            <h2 className="text-4xl md:text-6xl font-display font-bold text-white">
+              ABOUT <span className="neon-text">PROFILE</span>
+            </h2>
+          </div>
 
-          {/* Profile Section */}
-          <div className={`mb-16 ${isVisible ? 'animate-scale-in delay-200' : 'opacity-0'}`}>
-            <div className="glass rounded-3xl p-8 md:p-12">
-              <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-                {/* Profile Image */}
-                <div className="relative group">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-[#6366f1] via-[#a855f7] to-[#3b82f6] rounded-full blur-lg opacity-75 group-hover:opacity-100 transition duration-300 animate-pulse"></div>
-                  <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-white/20">
-                    <div className="w-full h-full bg-gradient-to-br from-[#6366f1]/20 to-[#a855f7]/20 flex items-center justify-center">
-                      <FaUser className="text-8xl text-white/30" />
-                    </div>
-                  </div>
+          {/* Asymmetrical Grid Layout */}
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {/* Main Bio - Takes 2 columns */}
+            <div className="md:col-span-2 space-y-6">
+              {/* Identity Panel */}
+              <div className="cyber-panel p-8">
+                <div className="flex items-center justify-between mb-6">
+                  <span className="micro-detail">IDENTITY.INFO</span>
+                  <span className="micro-detail">STATUS: ACTIVE</span>
                 </div>
 
-                {/* Bio Content */}
-                <div className="flex-1 text-center md:text-left">
-                  <h3 className="text-3xl md:text-4xl font-bold mb-3 bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
-                    Muaz Abdulkhafur
-                  </h3>
-                  <p className="text-xl text-[#6366f1] font-medium mb-4">Full Stack Engineer</p>
-                  <p className="text-white/70 mb-4 leading-relaxed">
-                    Hello! I'm a passionate Full Stack Engineer with expertise in building end-to-end web applications.
-                    I specialize in creating scalable, performant solutions using modern technologies across the entire stack,
-                    from responsive frontend interfaces to robust backend systems.
+                <h3 className="text-3xl font-display font-bold text-white mb-2">
+                  MUAZ ABDULKHAFUR
+                </h3>
+                <p className="text-neon text-lg font-mono mb-6">{'<Full Stack Engineer />'}</p>
+
+                <div className="space-y-4 text-white/70 font-light leading-relaxed">
+                  <p>
+                    Specialized in architecting and deploying scalable web applications across the complete technology stack.
+                    Focus on high-performance systems, clean architecture, and modern development methodologies.
                   </p>
-                  <p className="text-white/70 leading-relaxed">
-                    With experience in React, Node.js, cloud platforms, and database systems,
-                    I deliver comprehensive solutions that drive business value. I'm committed to writing clean, maintainable code
-                    and staying current with emerging technologies to build innovative digital products.
+                  <p>
+                    Expertise spans from responsive frontend interfaces using React and TypeScript to robust backend
+                    systems with Node.js, coupled with cloud infrastructure management and database optimization.
                   </p>
+                </div>
+              </div>
+
+              {/* Expertise Bars */}
+              <div className="cyber-panel p-8">
+                <div className="flex items-center justify-between mb-6">
+                  <span className="micro-detail">CORE.EXPERTISE</span>
+                  <span className="micro-detail">PROFICIENCY_LEVELS</span>
+                </div>
+
+                <div className="space-y-6">
+                  {expertise.map((item, index) => (
+                    <div key={index}>
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center space-x-3">
+                          <item.icon className="text-neon" />
+                          <span className="text-white font-light">{item.area}</span>
+                        </div>
+                        <span className="micro-detail">{item.level}%</span>
+                      </div>
+                      <div className="h-1 bg-cyber-light relative overflow-hidden">
+                        <div
+                          className="absolute top-0 left-0 h-full bg-neon shadow-neon-sm transition-all duration-1000"
+                          style={{ width: isVisible ? `${item.level}%` : '0%' }}
+                        ></div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
+
+            {/* Stats Column */}
+            <div className="space-y-6">
+              {stats.map((stat, index) => (
+                <div
+                  key={index}
+                  className="hud-element p-6 group hover:shadow-neon transition-all duration-300"
+                >
+                  <span className="micro-detail block mb-3">{stat.code}</span>
+                  <stat.icon className="text-4xl text-neon/50 mb-4 group-hover:text-neon transition-colors" />
+                  <div className="text-4xl font-display font-bold neon-text mb-2">
+                    {stat.value}
+                  </div>
+                  <div className="micro-detail text-white/60">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Stats Section */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className={`glass rounded-xl p-8 text-center hover:scale-105 transition-transform duration-300 group ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
-                style={{ animationDelay: `${0.5 + index * 0.1}s` }}
-              >
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-[#6366f1]/20 to-[#a855f7]/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <stat.icon className="text-3xl text-[#6366f1] group-hover:text-[#a855f7] transition-colors duration-300" />
+          {/* Technical Stack Overview */}
+          <div className="wireframe p-8">
+            <div className="flex items-center justify-between mb-6">
+              <span className="micro-detail">TECH.STACK_OVERVIEW</span>
+              <span className="micro-detail flex items-center space-x-2">
+                <div className="w-2 h-2 bg-neon rounded-full shadow-neon-sm animate-pulse-neon"></div>
+                <span>OPERATIONAL</span>
+              </span>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {['REACT.JS', 'NODE.JS', 'TYPESCRIPT', 'MONGODB', 'POSTGRESQL', 'AWS', 'DOCKER', 'GIT'].map((tech, index) => (
+                <div
+                  key={index}
+                  className="border border-neon/20 p-3 text-center hover:border-neon hover:bg-neon/5 transition-all duration-300 cursor-default"
+                >
+                  <span className="micro-detail">{tech}</span>
                 </div>
-                <div className="text-4xl font-bold bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-white/60 font-medium">{stat.label}</div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>

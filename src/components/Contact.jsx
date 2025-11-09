@@ -29,122 +29,152 @@ const Contact = () => {
 
   const socials = [
     {
-      name: 'GitHub',
+      name: 'GITHUB',
       url: 'https://github.com/MuazMu',
       icon: FaGithub,
-      gradient: 'from-[#333] to-gray-700',
-      description: 'Check out my code'
+      code: 'LINK_01',
+      description: 'CODE REPOSITORIES'
     },
     {
-      name: 'LinkedIn',
+      name: 'LINKEDIN',
       url: 'https://www.linkedin.com/in/muaz-abdulkhafur/',
       icon: FaLinkedin,
-      gradient: 'from-[#0A66C2] to-blue-700',
-      description: 'Professional network'
+      code: 'LINK_02',
+      description: 'PROFESSIONAL NETWORK'
     },
     {
-      name: 'Upwork',
+      name: 'UPWORK',
       url: 'https://www.upwork.com/freelancers/~0184077dc6e6acc93a?viewMode=1',
       icon: SiUpwork,
-      gradient: 'from-[#6FDA44] to-green-600',
-      description: 'Hire me on Upwork'
+      code: 'LINK_03',
+      description: 'FREELANCE PROFILE'
     },
     {
-      name: 'Telegram',
-      url: 'https://t.me/',
-      icon: FaTelegram,
-      gradient: 'from-[#0088cc] to-[#0077b5]',
-      description: 'Quick messaging'
-    },
-    {
-      name: 'Instagram',
-      url: 'https://www.instagram.com/ekizr._/?hl=id',
-      icon: FaInstagram,
-      gradient: 'from-[#833AB4] via-[#E4405F] to-[#FD1D1D]',
-      description: 'Follow my journey'
-    },
-    {
-      name: 'Twitter',
-      url: 'https://twitter.com/',
-      icon: FaTwitter,
-      gradient: 'from-[#1DA1F2] to-blue-600',
-      description: 'Latest updates'
-    },
-    {
-      name: 'Email',
+      name: 'EMAIL',
       url: 'mailto:muazabdulkhafur@gmail.com',
       icon: FaEnvelope,
-      gradient: 'from-[#EA4335] to-red-600',
-      description: 'Send me an email'
+      code: 'LINK_04',
+      description: 'DIRECT CONTACT'
     },
     {
-      name: 'WhatsApp',
+      name: 'TELEGRAM',
+      url: 'https://t.me/',
+      icon: FaTelegram,
+      code: 'LINK_05',
+      description: 'INSTANT MESSAGING'
+    },
+    {
+      name: 'WHATSAPP',
       url: 'https://wa.me/',
       icon: FaWhatsapp,
-      gradient: 'from-[#25D366] to-green-600',
-      description: 'Chat on WhatsApp'
+      code: 'LINK_06',
+      description: 'VOICE & TEXT'
     },
     {
-      name: 'Freelancer',
+      name: 'TWITTER',
+      url: 'https://twitter.com/',
+      icon: FaTwitter,
+      code: 'LINK_07',
+      description: 'SOCIAL UPDATES'
+    },
+    {
+      name: 'INSTAGRAM',
+      url: 'https://www.instagram.com/ekizr._/?hl=id',
+      icon: FaInstagram,
+      code: 'LINK_08',
+      description: 'VISUAL CONTENT'
+    },
+    {
+      name: 'FREELANCER',
       url: 'https://www.freelancer.com/',
       icon: SiFreelancer,
-      gradient: 'from-[#29B2FE] to-blue-600',
-      description: 'Freelance projects'
+      code: 'LINK_09',
+      description: 'PROJECT MARKETPLACE'
     }
   ];
 
   return (
-    <section id="Contact" className="min-h-screen py-20 relative" ref={sectionRef}>
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-5xl mx-auto">
-          {/* Animated Section Title */}
-          <h2 className={`text-4xl md:text-5xl font-bold mb-6 text-center ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-            <span className="bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
-              Let's Connect
-            </span>
-          </h2>
-          <p className={`text-center text-white/60 mb-16 text-lg max-w-2xl mx-auto ${isVisible ? 'animate-fade-in-up delay-200' : 'opacity-0'}`}>
-            Feel free to reach out through any of these platforms. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
-          </p>
+    <section id="Contact" className="min-h-screen py-20 relative bg-cyber-black" ref={sectionRef}>
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="max-w-7xl mx-auto">
+          {/* Section Header */}
+          <div className="mb-16">
+            <div className="flex items-center space-x-3 mb-4">
+              <div className="data-bar w-24"></div>
+              <span className="micro-detail">SECTION.04</span>
+            </div>
+            <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">
+              COMMUNICATION <span className="neon-text">CHANNELS</span>
+            </h2>
+            <p className="text-white/60 font-light text-lg max-w-3xl">
+              Available for freelance projects, collaborations, and full-time opportunities.
+              Response time: &lt;24H. All communication channels operational.
+            </p>
+          </div>
 
-          {/* Social Media Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Contact Grid - HUD Style */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {socials.map((social, index) => (
               <a
                 key={social.name}
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`glass rounded-2xl p-6 hover:scale-105 hover:shadow-2xl hover:shadow-[#6366f1]/20 transition-all duration-500 group ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
-                style={{ animationDelay: `${0.3 + index * 0.1}s` }}
+                className="hud-element p-6 hover:shadow-neon transition-all duration-500 group"
               >
-                <div className="flex items-center gap-4 mb-3">
-                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${social.gradient} flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                    <social.icon className="text-white text-2xl" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-white group-hover:bg-gradient-to-r group-hover:from-[#6366f1] group-hover:to-[#a855f7] group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                      {social.name}
-                    </h3>
+                {/* Header with code */}
+                <div className="flex items-center justify-between mb-4">
+                  <span className="micro-detail">{social.code}</span>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-neon rounded-full shadow-neon-sm"></div>
+                    <span className="micro-detail">ACTIVE</span>
                   </div>
                 </div>
-                <p className="text-sm text-white/60 group-hover:text-white/80 transition-colors duration-300">
-                  {social.description}
-                </p>
+
+                {/* Icon and Name */}
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="w-14 h-14 border border-neon/30 flex items-center justify-center group-hover:border-neon group-hover:bg-neon/5 transition-all duration-300">
+                    <social.icon className="text-3xl text-neon/50 group-hover:text-neon transition-colors" />
+                  </div>
+                  <h3 className="text-xl font-display font-bold text-white group-hover:text-neon transition-colors">
+                    {social.name}
+                  </h3>
+                </div>
+
+                {/* Description */}
+                <div className="flex items-center space-x-2">
+                  <div className="data-bar w-8"></div>
+                  <span className="micro-detail text-white/50">{social.description}</span>
+                </div>
               </a>
             ))}
           </div>
 
-          {/* Additional Info */}
-          <div className={`mt-16 text-center ${isVisible ? 'animate-fade-in-up delay-500' : 'opacity-0'}`}>
-            <div className="glass rounded-2xl p-8 max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
-                Available for Opportunities
-              </h3>
-              <p className="text-white/70 leading-relaxed">
-                I'm currently available for freelance work, collaborations, and full-time opportunities.
-                Whether you have a question, a project proposal, or just want to say hi, I'd love to hear from you!
+          {/* Status Panel */}
+          <div className="cyber-panel p-8 max-w-3xl mx-auto">
+            <div className="flex items-center justify-between mb-6">
+              <span className="micro-detail">STATUS.AVAILABILITY</span>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-neon rounded-full shadow-neon-sm animate-pulse-neon"></div>
+                <span className="micro-detail">ACCEPTING PROJECTS</span>
+              </div>
+            </div>
+
+            <h3 className="text-2xl font-display font-bold text-white mb-4">
+              OPEN FOR <span className="neon-text">COLLABORATION</span>
+            </h3>
+
+            <div className="space-y-4 text-white/70 font-light leading-relaxed">
+              <p>
+                Currently accepting freelance projects, contract work, and full-time positions.
+                Specialized in full-stack development, cloud infrastructure, and technical architecture.
               </p>
+              <div className="flex flex-wrap gap-3 mt-4">
+                <span className="micro-detail border border-neon/30 px-3 py-1">FREELANCE</span>
+                <span className="micro-detail border border-neon/30 px-3 py-1">CONTRACT</span>
+                <span className="micro-detail border border-neon/30 px-3 py-1">FULL-TIME</span>
+                <span className="micro-detail border border-neon/30 px-3 py-1">CONSULTING</span>
+              </div>
             </div>
           </div>
         </div>
